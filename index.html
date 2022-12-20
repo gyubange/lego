@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <title>레고랜드</title>
+
+    <style>
+        /* 여기어때 */
+        @font-face {
+            font-family: 'yg-jalnan';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* 나눔바른고딕 */
+        @font-face {
+            font-family: 'NanumBarunGothic';
+            font-style: normal;
+            font-weight: 400;
+            src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+            src: url('https://cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            line-height: 1;
+            min-width: 1280px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            height: 120px;
+            border-bottom: 1px solid #eee;
+        }
+
+        header .head {
+            width: calc(100% - 480px);
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .head ul {
+            display: flex;
+
+        }
+
+        header .head ul li {
+            margin: 0 30px;
+            font-size: 20px;
+            color: rgba(51, 51, 51, 0.842);
+            font-family: 'yg-jalnan';
+        }
+
+        header .head ul li a {
+            display: flex;
+        }
+
+        header .head .right_menu img {
+            width: 20px;
+            height: 20px;
+        }
+
+        header .head nav ul li:hover {
+            transform: scale(1.2);
+            transition: 0.5s;
+            font-weight: bold;
+        }
+
+        header .head .right_menu img:hover {
+            transform: scale(1.2);
+            transition: 0.5s;
+            font-weight: bold;
+        }
+
+        /* main_visual */
+
+        .main_visual {
+            height: 700px;
+        }
+
+        .main_visual video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* cont01 */
+
+        .cont01 {
+            margin: 80px 0;
+        }
+
+        .cont01 .inner {
+            width: 1280px;
+            height: 870px;
+            margin: 0 auto;
+        }
+
+        .cont01 .inner .list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cont01 .inner .list .item {
+            width: 484px;
+            height: 380px;
+            margin: 20px;
+            background-color: #98f3e3;
+        }
+
+        .cont01 .inner .list .item h3 {
+            height: 80px;
+            font-size: 30px;
+            font-family: 'yg-jalnan';
+            color: #fff;
+            background-color: #fa5050;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            line-height: 80px;
+            padding-left: 5px;
+        }
+
+        .cont01 .inner .list .item h3 img {
+            width: 30px;
+            height: 30px;
+            align-content: right;
+            margin-top: 20px;
+        }
+
+        .cont01 .inner .list .item ul li {
+            font-size: 25px;
+            color: rgba(51, 51, 51, 0.76);
+            font-family: 'NanumBarunGothic';
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+
+        .cont01 .inner .list .item .count li span {
+            font-size: 25px;
+            display: block;
+            line-height: 1.5;
+        }
+
+        .cont01 .inner .list .item .txt li span {
+            font-size: 16px;
+        }
+
+        .cont01 .inner .list .item:hover {
+            transform: scale(1.2);
+            transition: 0.5s;
+            font-weight: bold;
+            border-radius: 30px;
+        }
+
+        /* cont02 */
+
+        .cont02 {
+            padding: 0;
+            background-color: skyblue;
+        }
+
+        .cont02 .inner {
+            width: 1280px;
+            height: 450px;
+            margin: 0 auto;
+        }
+
+        .cont02 .inner .title h2 {
+            text-align: center;
+            font-family: 'yg-jalnan';
+            font-size: 30px;
+            margin-bottom: 30px;
+            line-height: 100px;
+        }
+
+        .cont02 .inner .title img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cont02 .inner .list img {
+            width: 242px;
+            height: 242px;
+            border-radius: 50%;
+        }
+
+
+        .cont02 .inner .list:hover img {
+            transform: scale(1.0);
+            transition: 0.3s;
+            border-radius: 10px;
+        }
+
+        /* cont 03 */
+
+        .cont03 div {
+            height: 200px;
+            margin: 0 auto;
+            background-color: #91f093;
+            object-fit: cover;
+            display: flex;
+
+        }
+
+        .cont03 div h3 {
+            font-family: 'yg-jalnan';
+            font-size: 25px;
+            color: #FFF;
+            line-height: 200px;
+            padding-left: 50px;
+        }
+
+        .cont03 div p {
+            height: 30px;
+            width: 220px;
+            margin: 70px;
+            background-color: #fff;
+            border: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+        }
+
+        .cont03 div p img {
+            width: 25px;
+            height: 25px;
+        }
+
+        /* footer */
+        footer {
+            background-color: #fefce1;
+            padding: 50px 0;
+        }
+
+        footer .inner {
+            display: flex;
+        }
+
+        footer .inner p {
+            margin-left: 30px;
+            margin-top: 45px;
+            font-family: 'NanumBarunGothic';
+            color: rgba(51, 51, 51, 0.568);
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <h1>
+                <a href="#">
+                    <img src="img/logo.webp" alt="로고">
+                </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#">레고랜드</a></li>
+                    <li><a href="#">리조트</a></li>
+                    <li><a href="#">이용권</a></li>
+                    <li><a href="#">문의</a></li>
+                </ul>
+            </nav>
+
+            <ul class="right_menu">
+                <li><a href="#"><img src="img/instagram.png" alt="인스타"></a></li>
+                <li><a href="#"><img src="img/facebook.png" alt="페이스북"></a></li>
+                <li><a href="#"><img src="img/blogging.png" alt="블로그"></a></li>
+            </ul><!-- .right menu end -->
+        </div><!-- .head end -->
+    </header>
+
+    <section class="main_visual">
+        <video autoplay muted loop>
+            <source src="img/make_lego.mp4" type="video/mp4">
+        </video>
+    </section><!-- .main_visral end -->
+
+    <!-- cont01 -->
+    <section class="cont01">
+        <div class="inner">
+            <div class="list">
+
+                <div class="item">
+                    <h3>요금안내 <img src="img/in.png" alt="in"></img></h3>
+                    <ul class="count">
+                        <li><span>크리스마스 시즌 한정 티켓 </span> ₩ 35,000</li>
+                        <li><span>연간 이용권 </span> ₩ 119,000 </li>
+                        <li><span>DAY 1 </span> ₩ 45,000</li>
+                    </ul>
+                </div><!-- 1 -->
+
+                <div class="item">
+                    <h3>이용가이드 <img src="img/in.png" alt="in"></img></h3>
+                    <ul>
+                        <li>편의 시설 안내</li>
+                        <li>Park Map</li>
+                        <li>장애인 편의 제도</li>
+                        <li>LEGOLAND 공식 모바일 어플</li>
+                        <li>리조트 분실물 운용 관리</li>
+                        <li>자주 묻는 FAQ</li>
+                    </ul>
+                </div><!-- 2 -->
+
+                <div class="item">
+                    <h3>이벤트 <img src="img/in.png" alt="in"></img></h3>
+                    <ul class="txt">
+                        <li>Merry Bricksmas<br>
+                            <span>LEGOLAND만의 특별한 크리스마스 이벤트가 시작되었어요!<br>11월 18일~12월 31일까지.</span>
+                        </li>
+                        <li>레고랜드 호텔 - 산타슬립오버<br>
+                            <span>쉿! 비밀이에요! 크리스마스에 산타가 찾아온데요!</span>
+                        </li>
+                    </ul>
+                </div><!-- 3 -->
+
+                <div class="item">
+                    <h3>공지사항<img src="img/in.png" alt="in"></img></h3>
+                    <ul>
+                        <li>방문 전 확인사항</li>
+                        <li>운영시간 안내</li>
+                        <li>동절기 운영안내</li>
+                    </ul>
+                </div><!-- 4 -->
+            </div><!-- .list end-->
+        </div><!-- .inner end -->
+    </section><!-- .cont01 end -->
+
+    <!-- cont 02 -->
+
+    <section class="cont02">
+        <div class="inner">
+            <div class="title">
+                <h2><img src="img/instagram_2.png"> #레고랜드 해시태그로 올려주세요!</h2>
+            </div>
+            <div class="list">
+                <img src="img/in1.png" alt="이미지">
+                <img src="img/in2.png" alt="이미지">
+                <img src="img/in3.png" alt="이미지">
+                <img src="img/in4.png" alt="이미지">
+                <img src="img/in5.png" alt="이미지">
+            </div><!-- .list end -->
+        </div><!-- .inner end -->
+    </section><!-- .cont02 end  -->
+
+    <!-- cont 03 -->
+
+    <section class="cont03">
+        <div>
+            <h3>legoland.com </h3>
+            <p>legoland.uk <a href="#"> <img src="img/in.png" alt="in"></img></a></p>
+        </div>
+    </section> <!-- .cont03 ends -->
+
+    <!-- footer -->
+    <footer>
+        <div class="inner">
+            <div class="logo">
+                <img src="img/logo.webp" alt="로고"></img>
+            </div> <!-- .logo end -->
+            <div>
+                <p>강원도 춘천시 하중도길128 | LEGOLAND® Korea Resort <br>
+
+                    대표자 : 매튜 폴 조엣 | 사업자등록번호 : 617-81-99974 | 통신판매업신고번호 : 제 2021-강원춘천-0527호 |<br>
+
+                    대표번호 033) 815-2300 (연중 10:00~18:00 / 점심 휴식 12:00~13:00)<br>
+                    | 파크 문의 LLKR.Experiences@legoland.com<br>
+                    | 호텔 문의 LLKR.Reservations@legoland.com</p>
+            </div>
+        </div><!-- .inner end -->
+    </footer>
+
+</body>
+
+</html>
